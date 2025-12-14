@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,82 +6,75 @@
 
 @layer base {
   :root {
-    /* Kid-friendly color palette */
-    --background: 45 100% 96%;
-    --foreground: 240 10% 25%;
+    /* Warm cream background like the screenshots */
+    --background: 45 70% 95%;
+    --foreground: 220 15% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 25%;
+    --card-foreground: 220 15% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 25%;
+    --popover-foreground: 220 15% 25%;
 
-    /* Sunny orange/yellow primary */
-    --primary: 35 100% 55%;
+    /* Coral/salmon red for title like screenshot */
+    --primary: 5 75% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft pink secondary */
-    --secondary: 340 85% 70%;
-    --secondary-foreground: 0 0% 100%;
+    /* Green for Addition */
+    --addition: 145 55% 48%;
+    --addition-foreground: 0 0% 100%;
 
-    /* Sky blue accent */
-    --accent: 200 95% 60%;
+    /* Orange for Subtraction */
+    --subtraction: 30 95% 55%;
+    --subtraction-foreground: 0 0% 100%;
+
+    /* Blue for Multiplication */
+    --multiplication: 205 85% 55%;
+    --multiplication-foreground: 0 0% 100%;
+
+    /* Pink/Magenta for Division */
+    --division: 340 80% 55%;
+    --division-foreground: 0 0% 100%;
+
+    /* Light blue for practice background */
+    --practice-bg: 200 50% 95%;
+
+    --secondary: 200 30% 96%;
+    --secondary-foreground: 220 15% 25%;
+
+    --muted: 200 20% 92%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 145 55% 48%;
     --accent-foreground: 0 0% 100%;
 
-    /* Fresh green for success */
-    --success: 145 70% 50%;
+    --success: 145 55% 48%;
     --success-foreground: 0 0% 100%;
 
-    /* Playful purple */
-    --purple: 270 80% 65%;
-    --purple-foreground: 0 0% 100%;
-
-    --muted: 45 30% 90%;
-    --muted-foreground: 240 10% 45%;
-
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 30% 85%;
-    --input: 45 30% 85%;
-    --ring: 35 100% 55%;
+    --border: 200 30% 88%;
+    --input: 200 30% 88%;
+    --ring: 205 85% 55%;
 
-    --radius: 1.5rem;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(45 100% 96%) 0%, hsl(200 100% 95%) 50%, hsl(340 100% 96%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(45 100% 98%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(35 100% 55%) 0%, hsl(25 100% 50%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(200 95% 60%) 0%, hsl(180 90% 55%) 100%);
-    --gradient-pink: linear-gradient(135deg, hsl(340 85% 70%) 0%, hsl(320 80% 65%) 100%);
-    --gradient-green: linear-gradient(135deg, hsl(145 70% 50%) 0%, hsl(160 75% 45%) 100%);
-    --gradient-purple: linear-gradient(135deg, hsl(270 80% 65%) 0%, hsl(290 75% 60%) 100%);
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(35 100% 55% / 0.25);
-    --shadow-card: 0 8px 30px -8px hsl(240 10% 25% / 0.15);
-    --shadow-button: 0 6px 20px -4px hsl(35 100% 45% / 0.4);
-    --shadow-float: 0 20px 40px -15px hsl(240 10% 25% / 0.2);
+    --radius: 1rem;
   }
 
   .dark {
-    --background: 240 15% 15%;
-    --foreground: 45 100% 96%;
-    --card: 240 15% 20%;
-    --card-foreground: 45 100% 96%;
-    --popover: 240 15% 20%;
-    --popover-foreground: 45 100% 96%;
-    --primary: 35 100% 55%;
+    --background: 220 20% 12%;
+    --foreground: 45 70% 95%;
+    --card: 220 20% 16%;
+    --card-foreground: 45 70% 95%;
+    --popover: 220 20% 16%;
+    --popover-foreground: 45 70% 95%;
+    --primary: 5 75% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 340 85% 70%;
-    --secondary-foreground: 0 0% 100%;
-    --accent: 200 95% 60%;
-    --accent-foreground: 0 0% 100%;
-    --muted: 240 15% 25%;
-    --muted-foreground: 45 30% 70%;
-    --border: 240 15% 25%;
-    --input: 240 15% 25%;
-    --ring: 35 100% 55%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 205 85% 55%;
   }
 }
 
@@ -92,154 +85,85 @@
 
   body {
     @apply bg-background text-foreground font-nunito antialiased;
-    background: var(--gradient-hero);
     min-height: 100vh;
   }
 }
 
 @layer utilities {
-  .font-fredoka {
-    font-family: 'Fredoka', sans-serif;
-  }
-
   .font-nunito {
     font-family: 'Nunito', sans-serif;
   }
 
-  .gradient-hero {
-    background: var(--gradient-hero);
+  .bg-addition {
+    background-color: hsl(var(--addition));
   }
 
-  .gradient-card {
-    background: var(--gradient-card);
+  .bg-subtraction {
+    background-color: hsl(var(--subtraction));
   }
 
-  .gradient-button {
-    background: var(--gradient-button);
+  .bg-multiplication {
+    background-color: hsl(var(--multiplication));
   }
 
-  .gradient-accent {
-    background: var(--gradient-accent);
+  .bg-division {
+    background-color: hsl(var(--division));
   }
 
-  .gradient-pink {
-    background: var(--gradient-pink);
+  .bg-practice {
+    background-color: hsl(var(--practice-bg));
   }
 
-  .gradient-green {
-    background: var(--gradient-green);
+  .text-addition {
+    color: hsl(var(--addition));
   }
 
-  .gradient-purple {
-    background: var(--gradient-purple);
+  .text-subtraction {
+    color: hsl(var(--subtraction));
   }
 
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
+  .text-multiplication {
+    color: hsl(var(--multiplication));
   }
 
-  .shadow-card {
-    box-shadow: var(--shadow-card);
+  .text-division {
+    color: hsl(var(--division));
   }
 
-  .shadow-button {
-    box-shadow: var(--shadow-button);
+  .border-addition {
+    border-color: hsl(var(--addition));
   }
 
-  .shadow-float {
-    box-shadow: var(--shadow-float);
+  .border-subtraction {
+    border-color: hsl(var(--subtraction));
   }
 
-  /* Animations */
-  @keyframes bounce-slow {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+  .border-multiplication {
+    border-color: hsl(var(--multiplication));
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) rotate(0deg);
-    }
-    25% {
-      transform: translateY(-8px) rotate(2deg);
-    }
-    75% {
-      transform: translateY(-4px) rotate(-2deg);
-    }
+  .border-division {
+    border-color: hsl(var(--division));
   }
 
-  @keyframes wiggle {
-    0%, 100% {
-      transform: rotate(-3deg);
-    }
-    50% {
-      transform: rotate(3deg);
-    }
+  /* Animation for answer feedback */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
   }
 
-  @keyframes pop {
-    0% {
-      transform: scale(0.8);
-      opacity: 0;
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
+  @keyframes pop-in {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
   }
 
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 20px hsl(35 100% 55% / 0.4);
-    }
-    50% {
-      box-shadow: 0 0 40px hsl(35 100% 55% / 0.6);
-    }
+  .animate-shake {
+    animation: shake 0.3s ease-in-out;
   }
 
-  @keyframes sparkle {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(0.8);
-    }
-  }
-
-  .animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-wiggle {
-    animation: wiggle 1s ease-in-out infinite;
-  }
-
-  .animate-pop {
-    animation: pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-  }
-
-  .animate-sparkle {
-    animation: sparkle 1.5s ease-in-out infinite;
-  }
-
-  .hover-bounce:hover {
-    animation: bounce-slow 0.5s ease-in-out;
+  .animate-pop-in {
+    animation: pop-in 0.3s ease-out;
   }
 }

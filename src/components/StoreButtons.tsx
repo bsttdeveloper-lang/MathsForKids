@@ -1,36 +1,31 @@
 import { Apple, Play } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const StoreButtons = () => {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
       {/* App Store Button */}
-      <Button 
-        variant="store" 
-        size="lg"
-        className="min-w-[200px] justify-start gap-3"
+      <button
         onClick={() => window.open('https://apps.apple.com', '_blank')}
+        className="w-full sm:w-auto bg-foreground text-background rounded-xl px-5 py-3 flex items-center justify-center gap-3 hover:opacity-90 transition-opacity"
       >
-        <Apple className="w-8 h-8" />
+        <Apple className="w-7 h-7" />
         <div className="text-left">
-          <div className="text-xs opacity-80 font-normal">Download on the</div>
-          <div className="text-lg font-bold -mt-1">App Store</div>
+          <div className="text-xs opacity-80">Download on the</div>
+          <div className="text-base font-bold -mt-0.5">App Store</div>
         </div>
-      </Button>
+      </button>
 
       {/* Google Play Button */}
-      <Button 
-        variant="store" 
-        size="lg"
-        className="min-w-[200px] justify-start gap-3"
+      <button
         onClick={() => window.open('https://play.google.com', '_blank')}
+        className="w-full sm:w-auto bg-foreground text-background rounded-xl px-5 py-3 flex items-center justify-center gap-3 hover:opacity-90 transition-opacity"
       >
-        <Play className="w-8 h-8 fill-current" />
+        <Play className="w-7 h-7 fill-current" />
         <div className="text-left">
-          <div className="text-xs opacity-80 font-normal">GET IT ON</div>
-          <div className="text-lg font-bold -mt-1">Google Play</div>
+          <div className="text-xs opacity-80">GET IT ON</div>
+          <div className="text-base font-bold -mt-0.5">Google Play</div>
         </div>
-      </Button>
+      </button>
     </div>
   );
 };

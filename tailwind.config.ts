@@ -7,14 +7,13 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "500px",
       },
     },
     extend: {
       fontFamily: {
-        fredoka: ['Fredoka', 'sans-serif'],
         nunito: ['Nunito', 'sans-serif'],
       },
       colors: {
@@ -31,17 +30,25 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+        addition: {
+          DEFAULT: "hsl(var(--addition))",
+          foreground: "hsl(var(--addition-foreground))",
+        },
+        subtraction: {
+          DEFAULT: "hsl(var(--subtraction))",
+          foreground: "hsl(var(--subtraction-foreground))",
+        },
+        multiplication: {
+          DEFAULT: "hsl(var(--multiplication))",
+          foreground: "hsl(var(--multiplication-foreground))",
+        },
+        division: {
+          DEFAULT: "hsl(var(--division))",
+          foreground: "hsl(var(--division-foreground))",
         },
         success: {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
-        },
-        purple: {
-          DEFAULT: "hsl(var(--purple))",
-          foreground: "hsl(var(--purple-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -50,6 +57,10 @@ export default {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -64,8 +75,8 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        xl: "calc(var(--radius) + 8px)",
-        "2xl": "calc(var(--radius) + 16px)",
+        xl: "1.25rem",
+        "2xl": "1.5rem",
         "3xl": "2rem",
       },
       keyframes: {
