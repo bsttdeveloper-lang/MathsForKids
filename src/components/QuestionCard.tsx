@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Check, X } from "lucide-react";
 import { Question, getOperationSymbol, formatNumber } from "@/lib/mathUtils";
 
@@ -13,15 +13,20 @@ const QuestionCard = ({ question, onAnswer, wholeNumbersOnly }: QuestionCardProp
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    // Only allow numbers, decimal point, and minus sign
-    if (/^-?\d*\.?\d*$/.test(value) || value === "") {
+    // Only allow numbers, decimal point, comma, and minus sign
+    if (/^-?\d*[.,]?\d*$/.test(value) || value === "") {
       setInputValue(value);
     }
   };
 
+  const normalizeAnswer = (value: string): string => {
+    // Convert comma to period for calculation
+    return value.replace(',', '.');
+  };
+
   const handleSubmit = () => {
     if (inputValue.trim() === "") return;
-    onAnswer(inputValue);
+    onAnswer(normalizeAnswer(inputValue));
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

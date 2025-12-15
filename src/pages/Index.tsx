@@ -8,11 +8,11 @@ import { Operation, generateQuestions, Question } from "@/lib/mathUtils";
 
 const Index = () => {
   const [selectedOperation, setSelectedOperation] = useState<Operation | null>(null);
-  const [wholeNumbersOnly, setWholeNumbersOnly] = useState(true);
+  const [decimalsEnabled, setDecimalsEnabled] = useState(false);
   const [questions, setQuestions] = useState<Question[]>([]);
 
   const handleOperationSelect = (operation: Operation) => {
-    const newQuestions = generateQuestions(operation, 10, wholeNumbersOnly);
+    const newQuestions = generateQuestions(operation, 10, !decimalsEnabled);
     setQuestions(newQuestions);
     setSelectedOperation(operation);
   };
@@ -24,7 +24,7 @@ const Index = () => {
 
   const handleReset = () => {
     if (selectedOperation) {
-      const newQuestions = generateQuestions(selectedOperation, 10, wholeNumbersOnly);
+      const newQuestions = generateQuestions(selectedOperation, 10, !decimalsEnabled);
       setQuestions(newQuestions);
     }
   };
@@ -52,7 +52,7 @@ const Index = () => {
       <PracticeScreen
         operation={selectedOperation}
         questions={questions}
-        wholeNumbersOnly={wholeNumbersOnly}
+        wholeNumbersOnly={!decimalsEnabled}
         onBack={handleBack}
         onReset={handleReset}
         onAnswer={handleAnswer}
@@ -102,12 +102,14 @@ const Index = () => {
       {/* Main Content */}
       <div className="px-4 pb-8">
         <div className="container max-w-md mx-auto">
-          {/* Whole Numbers Toggle */}
+          {/* Decimals Toggle */}
           <div className="bg-secondary/80 rounded-2xl px-5 py-4 mb-6 flex items-center justify-between">
-            <span className="text-lg font-semibold text-foreground">Whole numbers only</span>
+            <span className="text-lg font-semibold text-foreground">
+              {decimalsEnabled ? "Decimals enabled (0.1)" : "Decimals enable (0.1)"}
+            </span>
             <Switch
-              checked={wholeNumbersOnly}
-              onCheckedChange={setWholeNumbersOnly}
+              checked={decimalsEnabled}
+              onCheckedChange={setDecimalsEnabled}
             />
           </div>
 
@@ -150,32 +152,10 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Testimonial */}
-          <div className="bg-gradient-to-br from-addition/10 to-multiplication/10 rounded-2xl p-5 mb-8">
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 bg-addition rounded-full flex items-center justify-center text-white font-bold shrink-0">
-                S
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-bold text-foreground">Sarah M.</span>
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 text-subtraction fill-subtraction" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  "My daughter's math grades improved so much! She actually enjoys practicing now."
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Store Buttons */}
           <div className="pt-4 border-t border-border">
             <p className="text-center text-muted-foreground mb-4 font-nunito font-semibold">
-              Download the full app - It's FREE!
+              Download the full app
             </p>
             <StoreButtons />
           </div>
